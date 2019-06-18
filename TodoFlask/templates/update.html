@@ -1,0 +1,74 @@
+{% extends 'firstflask.html' %}
+
+{% block head %}
+<title>Update Tasks</title>
+<style>
+body {
+    background-image: url('../static/img/webbackg.jpg');
+    background-size:cover;
+    margin: 0;
+}
+
+h1 {
+    color:white;
+    text-align:center;
+    font-family:Cambria;
+}
+
+h4 {
+    color:rgba(255, 255, 255, 0.719);
+    text-align:center;
+}
+.content {
+    font-family: Cambria;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    color:rgba(255, 255, 255, 0.719);
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align:center;
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    color:rgba(255, 255, 255, 0.719);
+    margin-top: 20px;
+}
+
+#content {
+    font-family: Helvetica;
+    font-weight: normal;
+    width: 70%;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+<body background=url(static/img/webbackg.jpg)>
+<div class="content">
+    <h1>Update Task</h1>
+
+    <form action="/update/{{task.id}}" method="POST">
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <input type="submit" value="Update">
+    </form>
+</div>
+</body>
+{% endblock %}
